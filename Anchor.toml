@@ -1,0 +1,50 @@
+[features]
+seeds = false
+
+[test.validator]
+url = "https://api.mainnet-beta.solana.com"
+
+# sol pyth_account
+[[test.validator.clone]]
+address = "H6ARHf6YXhGYeQfUzQNGk6rDNnLBQKrenN712K4AQJEG"
+
+# btc pyth_account
+[[test.validator.clone]]
+address = "GVXRSBjFk6e6J3NbVPXohDJetcTjaeeuykUpbQF8UoMU"
+
+# eth pyth_account
+[[test.validator.clone]]
+address = "JBu1AL4obBcCMqKBBxhpWCNUt136ijcuMZLFvTP7iWdB"
+
+# avax pyth_account
+[[test.validator.clone]]
+address = "Ax9ujW5B9oqcv59N8m6f1BpTBq2rGeGaBcpKjC5UYsXU"
+
+# ada pyth_account
+[[test.validator.clone]]
+address = "3pyn4svBbxJ9Wnn3RVeafyLWfzie6yC5eTig2S62v9SC"
+
+# metadata program
+[[test.validator.clone]]
+address = "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s"
+[[test.validator.clone]]
+address = "PwDiXFxQsGra4sFFTT8r1QWRMd4vfumiWC1jfWNfdYT"
+
+[programs.localnet]
+betting = "F9cCsF2K73VcydesyJnk2GNA6igt82Roo4CQDkkk7dN"
+
+[programs.devnet]
+betting = "F9cCsF2K73VcydesyJnk2GNA6igt82Roo4CQDkkk7dN"
+
+[programs.mainnet]
+betting = "F9cCsF2K73VcydesyJnk2GNA6igt82Roo4CQDkkk7dN"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+cluster = "localnet"
+wallet = "./test-key.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
